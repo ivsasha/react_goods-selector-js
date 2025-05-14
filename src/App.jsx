@@ -22,7 +22,9 @@ export const App = () => {
   return (
     <main className="section container">
       <h1 className="title is-flex is-align-items-center">
-        {selectedGood} is selected
+        {selectedGood === null
+          ? 'No good selected'
+          : `${selectedGood} is selected`}
       </h1>
 
       <h1 className="title is-flex is-align-items-center">
@@ -30,7 +32,7 @@ export const App = () => {
           data-cy="ClearButton"
           type="button"
           className="delete ml-3"
-          onClick={() => setSelectedGood('No goods')}
+          onClick={() => setSelectedGood(null)}
         />
       </h1>
 
